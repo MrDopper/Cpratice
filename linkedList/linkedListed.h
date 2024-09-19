@@ -7,7 +7,7 @@ class LinkedListed
 {
 public:
     LinkedListed();
-    // ~LinkedListed();
+    ~LinkedListed();
     void addLastValue(int value);
     void addFirstValue(int value);
     void displayList();

@@ -4,6 +4,20 @@ LinkedListed::LinkedListed()
 {
     head = nullptr;
 }
+LinkedListed::~LinkedListed(){
+    Node* current = head;
+    while(current != nullptr){
+        Node* temp = current->next;
+        //I deleted the first node that current pointing to
+        //Now current and head is dangling pointer since they haven't point to anything for 1st trial
+        delete current;
+        //The function will reallocate and make current point to next node
+        current = temp;
+    }
+    //Since only the head is still a dangling pointer. I pointed it to nullptr in order to prevent memory leak.
+    head = nullptr;
+
+}
 void LinkedListed::addLastValue(int value)
 {
     Node *newNode = new Node(value);
