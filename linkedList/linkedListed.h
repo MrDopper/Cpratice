@@ -10,6 +10,8 @@ public:
     ~LinkedListed();
     void addLastValue(int value);
     void addFirstValue(int value);
+    int deleteNode(int value);
+    Node *deleteByIndex(int i);
     void displayList();
 
 private:

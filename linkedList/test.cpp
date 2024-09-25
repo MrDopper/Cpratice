@@ -10,5 +10,7 @@ int main()
     list.addFirstValue(2);
     list.addFirstValue(1);
     list.displayList();
+    list.deleteNode(11);
+    list.displayList();
     return 0;
 }
