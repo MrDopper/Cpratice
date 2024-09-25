@@ -5,7 +5,7 @@ CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 
 # Target Executable
-TARGET = testProgram
+TARGET = test
 
 # Automatically find all .cpp files in the directory
 SRCS = $(wildcard *.cpp)

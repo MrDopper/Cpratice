@@ -1,3 +1,4 @@
 linkedListed.o 
 test.o 
-testProgram
+test
+Node.o
