@@ -16,8 +16,6 @@ LinkedListed::~LinkedListed()
         // The function will reallocate and make current point to next node
         current = temp;
     }
-    // Since only the head is still a dangling pointer. I pointed it to nullptr in order to prevent memory leak.
-    head = nullptr;
     cout << "There is no memory lEAK" << endl;
 }
 void LinkedListed::addLastValue(int value)
@@ -60,7 +58,7 @@ int LinkedListed::deleteNode(int value)
 {
     if (head == nullptr)
     {
-        cout << "list is empty, returning -1.\n";
+        cout << "list is empty.\n";
         return -1;
     }
     Node *current = head;
@@ -108,4 +106,35 @@ void LinkedListed::displayList()
     }
     cout << "nullptr" << endl;
     delete temp;
+}
+void LinkedListed::deleteByIndex(int index)
+{
+    Node *current = head;
+    Node *previous = nullptr;
+    int count = 0;
+    if (current == nullptr)
+    {
+        cout << "The node doesn't exist" << endl;
+        return;
+    }
+    if (index == 0)
+    {
+        head = current->next;
+        delete current;
+        return;
+    }
+    while (current != nullptr)
+    {
+        if (count == index)
+        {
+            previous->next = current->next;
+            delete current;
+            return;
+        }
+        previous = current;
+        current = current->next;
+        count++;
+    }
+    cout << "Index is out of bound" << endl;
+    
 }

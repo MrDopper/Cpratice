@@ -2,7 +2,7 @@
 #define LINKEDLISTED_H
 #include "Node.h"
 #include "iostream"
-using std::cout, std::endl;
+using std::cout, std::endl, std::cerr;
 class LinkedListed
 {
 public:
@@ -11,8 +11,8 @@ public:
     void addLastValue(int value);
     void addFirstValue(int value);
     int deleteNode(int value);
-    Node *deleteByIndex(int i);
     void displayList();
+    void deleteByIndex(int index);
 
 private:
     // pointer to the first node of a linkedlist
